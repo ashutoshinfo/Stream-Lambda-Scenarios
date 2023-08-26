@@ -27,6 +27,9 @@ public class Logic {
 			}
 			return in;
 		}).collect(Collectors.toList());
+		// map
+		List<String> collect2 = list.stream()..map(in -> in.equals("A") ? in.concat("A") : in)
+		}).collect(Collectors.toList());
 		System.out.println(collect2);
 
 		List<String> collect3 = list.stream().distinct().collect(Collectors.toList());
