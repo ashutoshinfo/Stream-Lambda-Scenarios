@@ -1,4 +1,4 @@
-package info.ashutosh.lambda.ccenarios1;
+package info.ashutosh.lambda.scenario1;
 
 import java.util.ArrayList;
 import java.util.List;
