@@ -1,0 +1,4 @@
+Description:
+FInd un-common from both Array:
+		Integer[] a = { 5, 8, 6, 2, 9, 7 };
+		Integer[] b = { 6, 2, 5, 8, 1, 3 };
