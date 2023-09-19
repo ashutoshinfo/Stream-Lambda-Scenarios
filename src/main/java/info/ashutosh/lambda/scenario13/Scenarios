@@ -1,0 +1,12 @@
+Description:
+
+This method takes a list of Employee objects and performs parallel processing to count occurrences of each Employee. 
+It returns a ConcurrentMap where each key is an Employee and the corresponding value is the count of its occurrences in the input list. 
+The method uses Java streams and collectors to achieve this.
+
+After collecting the initial counts using Collectors.groupingByConcurrent,
+the method filters out entries where the count is not greater than 1 using the .filter(entry -> entry.getValue() > 1) operation. 
+Only the entries with a count greater than 1 are further processed.
+
+The final result is a filtered ConcurrentMap containing only those Employee instances that occur more than once in the input list,
+ along with their corresponding counts of occurrences.
