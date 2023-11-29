@@ -44,4 +44,11 @@ class Employee {
 		this.dept = dept;
 	}
 
+	@Override
+	public String toString() {
+		return "\nEmployee [id=" + id + ", name=" + name + ", salary=" + salary + ", dept=" + dept + "]";
+	}
+	
+	
+
 }

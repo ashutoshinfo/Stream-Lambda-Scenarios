@@ -1,10 +1,13 @@
 package info.ashutosh.lambda.scenario02;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
 import java.util.Map;
 import java.util.Map.Entry;
+import java.util.Set;
+import java.util.TreeSet;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.function.Function;
 import java.util.stream.Collectors;
@@ -44,6 +47,9 @@ public class Logic {
 	public static List<Integer> removeDuplicateandSort(Integer[] input) {
 
 		List<Integer> noDuplicate = new ArrayList<>();
+		Set<Integer> noDuplicate2=new TreeSet<>((o1, o2) -> -o1.compareTo(o2));
+		noDuplicate2.addAll(Arrays.asList(input));
+		System.out.println("|"+noDuplicate2);
 
 		for (int i = 0; i < input.length; i++) {
 

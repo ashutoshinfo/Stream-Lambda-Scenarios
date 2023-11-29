@@ -1,4 +1,4 @@
-package info.ashutosh.interview;
+package info.ashutosh.lambda.scenario14;
 
 import java.util.Arrays;
 import java.util.Map;

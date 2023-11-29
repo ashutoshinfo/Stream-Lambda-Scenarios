@@ -1,6 +1,10 @@
 package info.ashutosh.lambda.scenario08;
 
-import java.util.*;
+import java.util.Arrays;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Map;
+import java.util.Set;
 import java.util.stream.Collectors;
 
 public class FindDuplicates {
@@ -17,7 +21,10 @@ public class FindDuplicates {
 		System.out.println("Duplicates: " + duplicates);
 
 		Set<Integer> integers = new HashSet<>();
-		List<Integer> collect = numbers.stream().filter((in) -> !integers.add(in)).distinct().sorted((o1, o2) -> -o1.compareTo(o2)).collect(Collectors.toList());
+		List<Integer> collect = numbers.stream()
+				.filter((in) -> !integers.add(in))
+				.distinct().sorted((o1, o2) -> -o1.compareTo(o2))
+				.collect(Collectors.toList());
 
 		System.out.println(collect);
 	}

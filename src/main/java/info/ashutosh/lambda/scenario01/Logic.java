@@ -29,6 +29,30 @@ public class Logic {
 	 * @return Map<Employee, Long>
 	 */
 	public static Map<Employee, Long> countAccurencsLambda2(List<Employee> input) {
+		
+		Map<Employee, Long> collect2 = input.stream()
+		.collect(Collectors.groupingByConcurrent(
+                Function.identity(),
+                Collectors.counting()));
+		
+		for (Map.Entry<Employee, Long> entrySet : collect2.entrySet()) {
+			if (entrySet.getValue()==1) {
+				collect2.remove(entrySet.getKey());
+			}
+		}
+		System.out.println("|"+collect2);
+		
+		Map<Employee, Long> collect = input.stream()
+				.collect(Collectors.groupingBy(
+	                    Function.identity(),
+	                    Collectors.counting()))
+	            .entrySet().stream()
+	            .filter(entry -> entry.getValue() > 1)
+	            .collect(Collectors.toMap(
+	            		Map.Entry::getKey,
+	                    Map.Entry::getValue));
+		 
+		
 		return input.stream()
 				.collect(Collectors.groupingByConcurrent(
 	                    Function.identity(),
@@ -43,13 +67,12 @@ public class Logic {
 	                    ConcurrentHashMap::new));
 	}
 	
-	public static void countAccurencsLambda3(List<Employee> input) {
+	public static ConcurrentMap<Employee, Long> countAccurencsLambda3(List<Employee> input) {
 		ConcurrentMap<Employee, Long> collect = input.stream()
 				.collect(Collectors.groupingByConcurrent(
 						Function.identity(),
 	                    Collectors.counting()));
-		
-		System.out.println(collect);
+		return collect;
 	}
 
 	/**

@@ -14,7 +14,9 @@ public class Logic {
 		// Map<Department, List<Employee>>
 		Map<Department, Optional<Long>> highestSalariesByDepartment = employees.stream()
 				.collect(Collectors.groupingBy(Employee::getDept,
-						Collectors.mapping(Employee::getSalary, Collectors.minBy(Comparator.naturalOrder()))));
+						Collectors.mapping(
+								Employee::getSalary, 
+								Collectors.minBy(Comparator.naturalOrder()))));
 
 		System.out.println(highestSalariesByDepartment);
 

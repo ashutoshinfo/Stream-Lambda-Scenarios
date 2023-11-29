@@ -1,5 +1,8 @@
 package info.ashutosh.lambda.scenario06;
 
+import lombok.EqualsAndHashCode;
+
+@EqualsAndHashCode
 class Employee {
 	private long id;
 	private String name;
@@ -37,7 +40,7 @@ class Employee {
 
 	@Override
 	public String toString() {
-		return "\nEmployee [id=" + id + ", name=" + name + ", city=" + city + "]";
+		return "\n\tEmployee [id=" + id + ", name=" + name + ", city=" + city + "]";
 	}
 
 }
